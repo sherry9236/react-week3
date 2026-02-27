@@ -31,12 +31,12 @@ function App() {
   const [isAuth, setIsAuth] = useState(false);
 
   const inputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((preData) => ({
-      ...preData,
-      [name]: type == 'checkbox' ? checked : value,
-    }));
-  };
+  const { name, value, type, checked } = e.target;
+  setFormData((preData) => ({
+    ...preData,
+    [name]: type === 'checkbox' ? checked : value,
+  }));
+};
 
   const handleModalInputChange = (e) => {
     const { name, value, checked, type } = e.target;
